@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import type { Prisma } from "@prisma/client";
 import { leadSchema, normalizeLeadInput } from "@/lib/lead";
 import { prisma } from "@/lib/prisma";
 import { sendTelegramMessage } from "@/lib/telegram";
@@ -34,21 +35,29 @@ export async function POST(request: Request) {
     const crm = await createKeycrmPipelineCard(data, { userAgent });
 
     if (databaseSaved && internalLeadId && crm.ok && !crm.skipped && crm.cardId) {
-      await prisma.lead.update({
-        where: { id: internalLeadId },
-        data: { keycrmCardId: crm.cardId }
-      }).catch(() => null);
+      await prisma.lead
+        .update({
+          where: { id: internalLeadId },
+          data: { keycrmCardId: crm.cardId }
+        })
+        .catch(() => null);
     }
 
     if (databaseSaved && internalLeadId) {
-      await prisma.auditLog.create({
-        data: {
-          action: "lead.created",
-          entity: "Lead",
-          entityId: internalLeadId,
-          payload: { crm }
-        }
-      }).catch(() => null);
+      const auditPayload = {
+        crm: JSON.parse(JSON.stringify(crm))
+      } as Prisma.InputJsonValue;
+
+      await prisma.auditLog
+        .create({
+          data: {
+            action: "lead.created",
+            entity: "Lead",
+            entityId: internalLeadId,
+            payload: auditPayload
+          }
+        })
+        .catch(() => null);
     }
 
     const notificationText = [
