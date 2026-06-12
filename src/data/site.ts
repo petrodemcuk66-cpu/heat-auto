@@ -3,14 +3,14 @@ export const site = {
   legalName: "HEAT AUTO IMPORT",
   logo: "/images/logo/heat-auto-premium.svg",
   phone: process.env.NEXT_PUBLIC_PHONE || "+38 (063) 654-06-00",
-  email: process.env.NEXT_PUBLIC_EMAIL || "info@example.com",
+  email: process.env.NEXT_PUBLIC_EMAIL || "heatauto44@gmail.com",
   telegram: process.env.NEXT_PUBLIC_TELEGRAM || "https://t.me/HeatAuto",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "https://instagram.com/heatauto",
   address: "м. Львів, вул. Городоцька, 174",
   workTime: "Пн–Сб: 09:00–19:00",
   title: "Ваше авто з США або Європи — без переплат і нервів",
   description:
-    "HEAT AUTO знаходить вигідні авто зі США та Європи, перевіряє історію, рахує повну ціну до купівлі й супроводжує клієнта до отримання ключів в Україні.",
+    "Підбираємо авто під ваш бюджет та потреби. Показуємо реальну вартість під ключ. Супроводжуємо до отримання авто.",
   seoTitle: "HEAT AUTO — авто зі США та Європи під ключ",
   seoDescription:
     "Професійний імпорт авто під ключ: підбір, VIN-перевірка, аукціони, доставка, розмитнення, сертифікація та оформлення в Україні."
@@ -29,7 +29,7 @@ export const navigation = [
 
 export const metrics = [
   { value: "420+", label: "автомобілів доставлено клієнтам" },
-  { value: "45–70", label: "днів від заявки до ключів" },
+  { value: "5–25", label: "днів від отримання заявки до ключів" },
   { value: "30–40%", label: "економія проти купівлі на ринку України" },
   { value: "5 років", label: "досвіду в імпорті та логістиці авто" }
 ];

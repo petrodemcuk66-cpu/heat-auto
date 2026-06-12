@@ -65,7 +65,6 @@ export async function POST(request: Request) {
       internalLeadId ? `ID: ${internalLeadId}` : "",
       `Імʼя: ${data.name}`,
       `Телефон: ${data.phone}`,
-      data.email ? `Email: ${data.email}` : "",
       data.budget ? `Бюджет: ${data.budget}` : "",
       data.country ? `Країна: ${data.country}` : "",
       data.car ? `Авто: ${data.car}` : "",

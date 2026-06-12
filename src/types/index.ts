@@ -13,6 +13,8 @@ export type Car = {
   year: number;
   mileage: string;
   engine: string;
+  fuel?: string;
+  transmission?: string;
   status: string;
   tag: string;
   description: string;

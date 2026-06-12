@@ -3,6 +3,7 @@ import "./globals.css";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://heat-auto.vercel.app"),
   title: site.seoTitle,
   description: site.seoDescription,
   keywords: [

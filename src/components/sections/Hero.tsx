@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import MetricCard from "@/components/ui/MetricCard";
 
 const heroPoints = [
-  "Підбір під бюджет — показуємо варіанти, а не нав'язуємо перший",
+  "Підбір під бюджет — показуємо варіанти під ваші побажання",
   "VIN-перевірка до ставки — знаємо про авто більше ніж продавець",
   "Прозорий розрахунок — фінальна сума до купівлі, без сюрпризів",
   "Оформлення в Україні — до ключів у руках клієнта"
@@ -90,7 +90,7 @@ export default function Hero() {
           <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[color:var(--red)]/25 blur-3xl" />
           <p className="kicker">Чому HEAT AUTO</p>
           <h2 className="mt-5 text-xl font-black leading-tight sm:text-2xl lg:text-3xl">
-            Спочатку рахуємо повну ціну. Потім радимо, чи варто купувати.
+            Підбираємо авто під ваш бюджет та потреби. Показуємо реальну вартість під ключ. Супроводжуємо до отримання авто.
           </h2>
           <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
             Клієнт бачить не тільки ціну авто за кордоном, а фінальну картину: доставка, мито, сертифікація,

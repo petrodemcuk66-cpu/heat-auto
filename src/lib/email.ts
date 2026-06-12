@@ -27,8 +27,7 @@ export async function sendLeadEmail(lead: LeadInput) {
     text: [
       `Імʼя: ${lead.name}`,
       `Телефон: ${lead.phone}`,
-      lead.email ? `Email: ${lead.email}` : "",
-      lead.budget ? `Бюджет: ${lead.budget}` : "",
+        lead.budget ? `Бюджет: ${lead.budget}` : "",
       lead.country ? `Країна: ${lead.country}` : "",
       lead.car ? `Авто: ${lead.car}` : "",
       lead.message ? `Коментар: ${lead.message}` : ""

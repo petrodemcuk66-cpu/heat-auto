@@ -24,7 +24,6 @@ export function buildManagerComment(lead: LeadInput, userAgent?: string | null) 
     "Заявка з сайту HEAT AUTO",
     `Імʼя: ${lead.name}`,
     `Телефон: ${lead.phone}`,
-    lead.email ? `Email: ${lead.email}` : "",
     lead.budget ? `Бюджет: ${lead.budget}` : "",
     lead.country ? `Країна: ${lead.country}` : "",
     lead.car ? `Авто: ${lead.car}` : "",
@@ -69,7 +68,6 @@ export async function createKeycrmPipelineCard(
     manager_comment: buildManagerComment(lead, options?.userAgent),
     contact: removeEmpty({
       full_name: lead.name,
-      email: lead.email || undefined,
       phone: lead.phone
     }),
     utm_source: lead.utm_source,

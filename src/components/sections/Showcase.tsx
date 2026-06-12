@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import CarRequestButton from "@/components/sections/CarRequestButton";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { getPublicCars } from "@/lib/publicData";
 
@@ -40,7 +41,11 @@ export default async function Showcase() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="text-2xl font-black">{car.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[color:var(--muted)]">{car.description}</p>
+                    <div className="mt-4 space-y-1 text-sm leading-6 text-[color:var(--muted)]">
+                      {car.description.split("\n").map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
+                    </div>
                   </div>
                   <p className="shrink-0 text-right text-lg font-black text-[color:var(--red2)]">{car.price}</p>
                 </div>
@@ -53,9 +58,21 @@ export default async function Showcase() {
                     <b className="block text-white">{car.mileage}</b>Пробіг
                   </div>
                   <div className="rounded-2xl bg-white/[.055] p-3">
-                    <b className="block text-white">{car.engine}</b>Двигун
+                    <b className="block text-white">{car.fuel || car.engine}</b>Паливо
                   </div>
                 </div>
+
+                <CarRequestButton
+                  title={car.title}
+                  country={car.country}
+                  year={car.year}
+                  mileage={car.mileage}
+                  fuel={car.fuel}
+                  engine={car.engine}
+                  transmission={car.transmission}
+                  price={car.price}
+                  description={car.description}
+                />
               </div>
             </article>
           ))}

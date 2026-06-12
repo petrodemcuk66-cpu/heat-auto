@@ -15,6 +15,12 @@ type UtmState = {
   referrer: string;
 };
 
+type SelectedCarPayload = {
+  car: string;
+  message: string;
+  country: string;
+};
+
 const emptyUtm: UtmState = {
   utm_source: "",
   utm_medium: "",
@@ -25,10 +31,30 @@ const emptyUtm: UtmState = {
   referrer: ""
 };
 
+const STORAGE_KEY = "heatAutoSelectedCarPayload";
+
+function isSelectedCarPayload(value: unknown): value is SelectedCarPayload {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const data = value as Record<string, unknown>;
+
+  return (
+    typeof data.car === "string" &&
+    typeof data.message === "string" &&
+    typeof data.country === "string"
+  );
+}
+
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [serverMessage, setServerMessage] = useState("");
   const [utm, setUtm] = useState<UtmState>(emptyUtm);
+  const [countryValue, setCountryValue] = useState("");
+  const [carValue, setCarValue] = useState("");
+  const [messageValue, setMessageValue] = useState("");
+  const [selectedCarTitle, setSelectedCarTitle] = useState("");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -42,6 +68,54 @@ export default function LeadForm() {
       referrer: document.referrer || ""
     });
   }, []);
+
+  useEffect(() => {
+    function applySelectedCar(payload: SelectedCarPayload) {
+      setCountryValue(payload.country);
+      setCarValue(payload.car);
+      setMessageValue(payload.message);
+      setSelectedCarTitle(payload.car);
+    }
+
+    function handleSelectedCar(event: Event) {
+      const customEvent = event as CustomEvent<SelectedCarPayload>;
+
+      if (isSelectedCarPayload(customEvent.detail)) {
+        applySelectedCar(customEvent.detail);
+      }
+    }
+
+    try {
+      const saved = window.sessionStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved) as unknown;
+        if (isSelectedCarPayload(parsed)) {
+          applySelectedCar(parsed);
+        }
+      }
+    } catch {
+      // Якщо sessionStorage недоступний або JSON пошкоджений, просто залишаємо форму порожньою.
+    }
+
+    window.addEventListener("heat-auto:select-car", handleSelectedCar);
+
+    return () => {
+      window.removeEventListener("heat-auto:select-car", handleSelectedCar);
+    };
+  }, []);
+
+  function clearSelectedCar() {
+    setCountryValue("");
+    setCarValue("");
+    setMessageValue("");
+    setSelectedCarTitle("");
+
+    try {
+      window.sessionStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Нічого не робимо, якщо браузер не дозволяє sessionStorage.
+    }
+  }
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -65,6 +139,7 @@ export default function LeadForm() {
       setStatus("success");
       setServerMessage(result?.message || "Дякуємо! Ми зателефонуємо протягом 15 хвилин.");
       form.reset();
+      clearSelectedCar();
     } else {
       setStatus("error");
       setServerMessage(result?.message || "Не вдалося відправити заявку. Спробуйте ще раз або напишіть у месенджер.");
@@ -87,6 +162,20 @@ export default function LeadForm() {
         Розкажіть, яке авто шукаєте — менеджер підготує перші варіанти та попередній розрахунок.
       </div>
 
+      {selectedCarTitle && (
+        <div className="mb-5 rounded-2xl border border-white/10 bg-white/[.04] p-4 text-sm leading-6 text-[color:var(--muted)]">
+          <p className="font-black text-white">Обране авто з каталогу:</p>
+          <p className="mt-1 text-red-100">{selectedCarTitle}</p>
+          <button
+            type="button"
+            onClick={clearSelectedCar}
+            className="mt-3 text-xs font-black text-[color:var(--red2)] hover:text-white"
+          >
+            Очистити вибір
+          </button>
+        </div>
+      )}
+
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2">
           <span className="text-sm font-black">Імʼя</span>
@@ -99,18 +188,18 @@ export default function LeadForm() {
         </label>
 
         <label className="grid gap-2">
-          <span className="text-sm font-black">Email</span>
-          <input className="input" name="email" type="email" placeholder="email@example.com" />
-        </label>
-
-        <label className="grid gap-2">
           <span className="text-sm font-black">Бюджет</span>
           <input className="input" name="budget" placeholder="Наприклад: $30 000" />
         </label>
 
         <label className="grid gap-2">
           <span className="text-sm font-black">Країна</span>
-          <select className="input" name="country" defaultValue="">
+          <select
+            className="input"
+            name="country"
+            value={countryValue}
+            onChange={(event) => setCountryValue(event.target.value)}
+          >
             <option value="" disabled>Оберіть напрямок</option>
             <option>США</option>
             <option>Європа</option>
@@ -118,15 +207,27 @@ export default function LeadForm() {
           </select>
         </label>
 
-        <label className="grid gap-2">
+        <label className="grid gap-2 sm:col-span-2">
           <span className="text-sm font-black">Бажане авто</span>
-          <input className="input" name="car" placeholder="BMW, Mercedes, Toyota..." />
+          <input
+            className="input"
+            name="car"
+            placeholder="BMW, Mercedes, Toyota..."
+            value={carValue}
+            onChange={(event) => setCarValue(event.target.value)}
+          />
         </label>
       </div>
 
       <label className="mt-4 grid gap-2">
         <span className="text-sm font-black">Побажання</span>
-        <textarea className="input min-h-28 resize-none" name="message" placeholder="Рік, комплектація, тип кузова, терміни, важливі деталі..." />
+        <textarea
+          className="input min-h-28 resize-none"
+          name="message"
+          placeholder="Рік, комплектація, тип кузова, терміни, важливі деталі..."
+          value={messageValue}
+          onChange={(event) => setMessageValue(event.target.value)}
+        />
       </label>
 
       {Object.entries(utm).map(([key, value]) => (

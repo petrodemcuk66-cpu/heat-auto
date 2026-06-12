@@ -104,7 +104,13 @@ export default function Header() {
               handleAnchorClick("#home");
             }}
           >
-            <Image src={site.logo} alt={site.companyName} fill priority className="object-contain p-1" />
+            <Image
+              src="/images/logo/heat-auto-header-client.png"
+              alt={site.companyName}
+              fill
+              priority
+              className="object-contain p-1"
+            />
           </a>
 
           <nav className="hidden items-center gap-1 lg:flex">
