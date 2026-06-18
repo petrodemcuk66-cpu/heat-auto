@@ -41,10 +41,6 @@ export default function CarRequestButton({
       transmission
     ].filter(Boolean).join(" — ");
 
-    const priceLines = description
-      ?.split("\n")
-      .filter((line) => line.startsWith("Авторіа:") || line.startsWith("Heat Auto:")) || [];
-
     const message = [
       "Заявка на авто з каталогу:",
       `Назва: ${title}`,
@@ -54,7 +50,7 @@ export default function CarRequestButton({
       `Обʼєм двигуна: ${engine}`,
       transmission ? `Коробка передач: ${transmission}` : "",
       `Країна: ${country}`,
-      ...(priceLines.length ? priceLines : [`Ціна: ${price}`])
+      `Ціна: ${price}`
     ].filter(Boolean).join("\n");
 
     const payload: SelectedCarPayload = {

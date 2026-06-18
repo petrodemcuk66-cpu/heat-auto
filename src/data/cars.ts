@@ -8,7 +8,7 @@ export const cars: Car[] = [
     title: "Volkswagen Golf VI 2.0 TSI GTI adidas",
     country: "Європа",
     image: "/images/cars/volkswagen-golf-gti-adidas-2010.jpg",
-    price: "Heat Auto: 7600$",
+    price: "Під запит $",
     year: 2010,
     mileage: "148,727 km",
     engine: "1986 cm",
@@ -22,8 +22,6 @@ export const cars: Car[] = [
       "Тип палива: Бензин",
       "Об'єм двигуна: 1986 cm",
       "Коробка передач: Механічна",
-      "Авторіа: 9200$",
-      "Heat Auto: 7600$"
     ])
   },
   {
@@ -31,7 +29,7 @@ export const cars: Car[] = [
     title: "Volkswagen Golf VI 1.2 TSI Style",
     country: "Європа",
     image: "/images/cars/volkswagen-golf-tsi-style-2012.jpg",
-    price: "Heat Auto: 5200$",
+    price: "Під запит $",
     year: 2012,
     mileage: "119,243 km",
     engine: "1,197 ccm",
@@ -45,8 +43,6 @@ export const cars: Car[] = [
       "Тип палива: Бензин",
       "Об'єм двигуна: 1,197 ccm",
       "Коробка передач: Механічна",
-      "Авторіа: 7500$",
-      "Heat Auto: 5200$"
     ])
   },
   {
@@ -54,7 +50,7 @@ export const cars: Car[] = [
     title: "Renault Megane 1.5 dCi Energy Zen",
     country: "Європа",
     image: "/images/cars/renault-megane-energy-zen-2016.jpg",
-    price: "Heat Auto: 9 400$",
+    price: "Під запит $",
     year: 2016,
     mileage: "74,310 km",
     engine: "1498 cm",
@@ -68,8 +64,6 @@ export const cars: Car[] = [
       "Тип палива: Дизель",
       "Об'єм двигуна: 1498 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 12 500$",
-      "Heat Auto: 9 400$"
     ])
   },
   {
@@ -77,7 +71,7 @@ export const cars: Car[] = [
     title: "Hyundai Tucson 1.7 CRDi Xpossible ISG 2WD",
     country: "Європа",
     image: "/images/cars/hyundai-tucson-xpossible-2016.jpg",
-    price: "Heat Auto: 12 800$",
+    price: "Під запит $",
     year: 2016,
     mileage: "178,467 km",
     engine: "1698 cm",
@@ -91,8 +85,6 @@ export const cars: Car[] = [
       "Тип палива: Дизель",
       "Об'єм двигуна: 1698 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 16 600$",
-      "Heat Auto: 12 800$"
     ])
   },
   {
@@ -100,7 +92,7 @@ export const cars: Car[] = [
     title: "Skoda Octavia 1.4 TSI Ambiente",
     country: "Європа",
     image: "/images/cars/skoda-octavia-ambiente-2009.jpg",
-    price: "Heat Auto: 5360$",
+    price: "Під запит $",
     year: 2009,
     mileage: "172,899 km",
     engine: "1398 cm",
@@ -114,8 +106,6 @@ export const cars: Car[] = [
       "Тип палива: Бензин",
       "Об'єм двигуна: 1398 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 7100$",
-      "Heat Auto: 5360$"
     ])
   },
   {
@@ -123,7 +113,7 @@ export const cars: Car[] = [
     title: "Nissan Qashqai 1.6 Acenta",
     country: "Європа",
     image: "/images/cars/nissan-qashqai-acenta-2013.jpg",
-    price: "Heat Auto: 9250$",
+    price: "Під запит $",
     year: 2013,
     mileage: "109,906 km",
     engine: "1598 cm",
@@ -137,8 +127,6 @@ export const cars: Car[] = [
       "Тип палива: Бензин",
       "Об'єм двигуна: 1598 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 11 400$",
-      "Heat Auto: 9250$"
     ])
   },
   {
@@ -146,7 +134,7 @@ export const cars: Car[] = [
     title: "Audi A4 Avant 2.0 TDI",
     country: "Європа",
     image: "/images/cars/audi-a4-avant-2012.jpg",
-    price: "під запит",
+    price: "Під запит $",
     year: 2012,
     mileage: "157,367 км",
     engine: "1968 см³",
@@ -167,7 +155,7 @@ export const cars: Car[] = [
     title: "Ford Focus 1.6 TDCi",
     country: "Європа",
     image: "/images/cars/ford-focus-tdci-2014.jpg",
-    price: "під запит",
+    price: "Під запит $",
     year: 2014,
     mileage: "177,202 км",
     engine: "1560 см³",
@@ -188,7 +176,7 @@ export const cars: Car[] = [
     title: "Kia Sorento 2.2 CRDi",
     country: "Європа",
     image: "/images/cars/kia-sorento-crdi-2013.jpg",
-    price: "під запит",
+    price: "Під запит $",
     year: 2013,
     mileage: "156,250 км",
     engine: "2199 см³",
@@ -209,7 +197,7 @@ export const cars: Car[] = [
     title: "Volkswagen Passat Variant 2.0 TDI",
     country: "Європа",
     image: "/images/cars/volkswagen-passat-variant-2010.jpg",
-    price: "під запит",
+    price: "Під запит $",
     year: 2010,
     mileage: "180,240 км",
     engine: "1968 см³",
@@ -230,7 +218,7 @@ export const cars: Car[] = [
     title: "Volkswagen Tiguan 2.0 TSI",
     country: "Європа",
     image: "/images/cars/volkswagen-tiguan-tsi-2012.jpg",
-    price: "під запит",
+    price: "Під запит $",
     year: 2012,
     mileage: "133,029 км",
     engine: "1984 см³",
@@ -251,7 +239,7 @@ export const cars: Car[] = [
     title: "Renault Megane 1.6 dCi BOSE Edition",
     country: "Європа",
     image: "/images/cars/renault-megane-bose-edition-2015.jpg",
-    price: "Heat Auto: 7100$",
+    price: "Під запит $",
     year: 2015,
     mileage: "143,622 km",
     engine: "1589 cm",
@@ -265,8 +253,6 @@ export const cars: Car[] = [
       "Тип палива: Дизель",
       "Об'єм двигуна: 1589 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 9 800$",
-      "Heat Auto: 7100$"
     ])
   },
   {
@@ -274,7 +260,7 @@ export const cars: Car[] = [
     title: "Ford Escape 1.5 EcoBoost",
     country: "США",
     image: "/images/cars/ford-escape-15-2018.jpg",
-    price: "Heat Auto: 10 300$",
+    price: "Під запит $",
     year: 2018,
     mileage: "85,709 mi",
     engine: "1.5",
@@ -288,8 +274,6 @@ export const cars: Car[] = [
       "Тип палива: Бензин",
       "Об'єм двигуна: 1.5",
       "Коробка передач: Автомат",
-      "Авторіа: 16 790$",
-      "Heat Auto: 10 300$"
     ])
   },
   {
@@ -297,7 +281,7 @@ export const cars: Car[] = [
     title: "Peugeot 3008 1.6 HDi Business Pack",
     country: "Європа",
     image: "/images/cars/peugeot-3008-business-pack-2012.jpg",
-    price: "Heat Auto: 7200$",
+    price: "Під запит $",
     year: 2012,
     mileage: "220,326 km",
     engine: "1598 cm",
@@ -311,8 +295,6 @@ export const cars: Car[] = [
       "Тип палива: Дизель",
       "Об'єм двигуна: 1598 cm",
       "Коробка передач: Механіка",
-      "Авторіа: 9 600$",
-      "Heat Auto: 7200$"
     ])
   }
 ];

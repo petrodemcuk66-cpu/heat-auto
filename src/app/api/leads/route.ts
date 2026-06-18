@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { leadSchema, normalizeLeadInput } from "@/lib/lead";
 import { prisma } from "@/lib/prisma";
 import { sendTelegramMessage } from "@/lib/telegram";
-import { createKeycrmPipelineCard } from "@/lib/keycrm";
+import { createSalesDriveOrder } from "@/lib/salesdrive";
 import { sendLeadEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -32,20 +32,12 @@ export async function POST(request: Request) {
       databaseSaved = false;
     }
 
-    const crm = await createKeycrmPipelineCard(data, { userAgent });
-
-    if (databaseSaved && internalLeadId && crm.ok && !crm.skipped && crm.cardId) {
-      await prisma.lead
-        .update({
-          where: { id: internalLeadId },
-          data: { keycrmCardId: crm.cardId }
-        })
-        .catch(() => null);
-    }
+    const salesdrive = await createSalesDriveOrder(data, { userAgent });
 
     if (databaseSaved && internalLeadId) {
       const auditPayload = {
-        crm: JSON.parse(JSON.stringify(crm))
+        crm: "SalesDrive",
+        salesdrive: JSON.parse(JSON.stringify(salesdrive))
       } as Prisma.InputJsonValue;
 
       await prisma.auditLog
@@ -63,6 +55,7 @@ export async function POST(request: Request) {
     const notificationText = [
       "<b>Нова заявка з сайту HEAT AUTO</b>",
       internalLeadId ? `ID: ${internalLeadId}` : "",
+      salesdrive.ok && !salesdrive.skipped && salesdrive.orderId ? `SalesDrive ID: ${salesdrive.orderId}` : "",
       `Імʼя: ${data.name}`,
       `Телефон: ${data.phone}`,
       data.budget ? `Бюджет: ${data.budget}` : "",
@@ -83,7 +76,7 @@ export async function POST(request: Request) {
       message: "Дякуємо! Ми зателефонуємо протягом 15 хвилин.",
       leadId: internalLeadId,
       databaseSaved,
-      crm
+      crm: salesdrive
     });
   } catch {
     return NextResponse.json(
@@ -99,6 +92,6 @@ export async function POST(request: Request) {
 export async function GET() {
   return NextResponse.json({
     ok: true,
-    message: "Lead API is ready"
+    message: "Lead API with SalesDrive is ready"
   });
 }
