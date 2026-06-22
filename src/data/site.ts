@@ -22,7 +22,6 @@ export const navigation = [
   { label: "Послуги", href: "#services" },
   { label: "Авто", href: "#cars" },
   { label: "Гарантії", href: "#guarantees" },
-  { label: "Калькулятор", href: "#calculator" },
   { label: "FAQ", href: "#faq" },
   { label: "Контакти", href: "#contacts" }
 ];

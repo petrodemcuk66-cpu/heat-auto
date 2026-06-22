@@ -19,12 +19,6 @@ const quickAccess = [
     icon: "TG"
   },
   {
-    label: "Калькулятор",
-    text: "розрахунок ціни",
-    href: "#calculator",
-    icon: "$"
-  },
-  {
     label: "Авто",
     text: "приклади варіантів",
     href: "#cars",
