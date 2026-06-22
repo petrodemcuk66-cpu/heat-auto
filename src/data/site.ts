@@ -6,7 +6,7 @@ export const site = {
   email: process.env.NEXT_PUBLIC_EMAIL || "heatauto44@gmail.com",
   telegram: process.env.NEXT_PUBLIC_TELEGRAM || "https://t.me/HeatAuto",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "https://instagram.com/heatauto",
-  address: "м. Львів, вул. Городоцька, 174",
+  address: "Микулинецька 3А",
   workTime: "Пн–Сб: 09:00–19:00",
   title: "Ваше авто з США або Європи — без переплат і нервів",
   description:
