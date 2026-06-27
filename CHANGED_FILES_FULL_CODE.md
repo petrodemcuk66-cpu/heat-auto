@@ -1,3 +1,8 @@
+# Повний код змінених файлів — fixed mobile menu overlay
+
+## `src/components/layout/Header.tsx`
+
+```tsx
 "use client";
 
 import Image from "next/image";
@@ -17,6 +22,12 @@ const quickAccess = [
     text: "@HeatAuto",
     href: site.telegram,
     icon: "TG"
+  },
+  {
+    label: "Калькулятор",
+    text: "розрахунок ціни",
+    href: "#calculator",
+    icon: "$"
   },
   {
     label: "Авто",
@@ -92,23 +103,13 @@ export default function Header() {
           <a
             href="#home"
             aria-label="HEAT AUTO"
-<<<<<<< HEAD
-            className="relative h-[90px] w-[290px] shrink-0 overflow-hidden rounded-[18px] sm:w-[310px]"
-=======
             className="relative h-[52px] w-[168px] shrink-0 overflow-hidden rounded-[18px] bg-black sm:w-[180px]"
->>>>>>> adde184a444a27f2d4887820b9b70575cce57792
             onClick={(event) => {
               event.preventDefault();
               handleAnchorClick("#home");
             }}
           >
-            <Image
-              src="/images/logo/heat-auto-header-client.png"
-              alt={site.companyName}
-              fill
-              priority
-              className="object-contain p-1"
-            />
+            <Image src={site.logo} alt={site.companyName} fill priority className="object-contain p-1" />
           </a>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -232,3 +233,5 @@ export default function Header() {
     </>
   );
 }
+
+```

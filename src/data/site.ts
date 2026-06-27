@@ -1,7 +1,11 @@
 export const site = {
   companyName: "HEAT AUTO",
   legalName: "HEAT AUTO IMPORT",
+<<<<<<< HEAD
   logo: "/images/logo/heat-auto-header-client.png",
+=======
+  logo: "/images/logo/heat-auto-premium.svg",
+>>>>>>> adde184a444a27f2d4887820b9b70575cce57792
   phone: process.env.NEXT_PUBLIC_PHONE || "+38 (063) 654-06-00",
   email: process.env.NEXT_PUBLIC_EMAIL || "heatauto44@gmail.com",
   telegram: process.env.NEXT_PUBLIC_TELEGRAM || "https://t.me/HeatAuto",
