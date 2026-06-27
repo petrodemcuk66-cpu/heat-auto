@@ -37,7 +37,7 @@ export default function Button({
     const element = document.querySelector(href);
 
     if (element) {
-      const top = element.getBoundingClientRect().top + window.scrollY - 88;
+      const top = element.getBoundingClientRect().top + window.scrollY - 118;
       window.scrollTo({ top, behavior: "smooth" });
     }
   }

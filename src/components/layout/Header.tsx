@@ -79,7 +79,7 @@ export default function Header() {
       const element = document.querySelector(href);
 
       if (element) {
-        const top = element.getBoundingClientRect().top + window.scrollY - 88;
+        const top = element.getBoundingClientRect().top + window.scrollY - 118;
         window.scrollTo({ top, behavior: "smooth" });
       }
     }, 80);
@@ -88,11 +88,11 @@ export default function Header() {
   return (
     <>
       <header className="fixed left-0 right-0 top-0 z-[100] border-b border-white/10 bg-black/85 backdrop-blur-2xl">
-        <div className="container flex h-20 items-center justify-between gap-4">
+        <div className="container flex h-[110px] items-center justify-between gap-4">
           <a
             href="#home"
             aria-label="HEAT AUTO"
-            className="relative h-[48px] w-[150px] shrink-0 overflow-hidden rounded-[12px] bg-black sm:w-[165px]"
+            className="relative h-[90px] w-[280px] shrink-0 overflow-hidden rounded-[12px] bg-black sm:w-[310px]"
             onClick={(event) => {
               event.preventDefault();
               handleAnchorClick("#home");
@@ -140,7 +140,7 @@ export default function Header() {
       </header>
 
       {open && (
-        <div className="fixed inset-x-0 bottom-0 top-20 z-[90] block overflow-y-auto border-t border-white/10 bg-[#050507] shadow-[0_30px_90px_rgba(0,0,0,.85)] lg:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[110px] z-[90] block overflow-y-auto border-t border-white/10 bg-[#050507] shadow-[0_30px_90px_rgba(0,0,0,.85)] lg:hidden">
           <div className="container grid min-h-full gap-5 py-5 pb-28">
             <div className="rounded-[28px] border border-white/10 bg-white/[.04] p-4">
               <p className="kicker">Швидкий доступ</p>

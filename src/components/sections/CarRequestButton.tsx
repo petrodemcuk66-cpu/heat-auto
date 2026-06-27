@@ -69,7 +69,7 @@ export default function CarRequestButton({
 
     const contacts = document.getElementById("contacts");
     if (contacts) {
-      const top = contacts.getBoundingClientRect().top + window.scrollY - 88;
+      const top = contacts.getBoundingClientRect().top + window.scrollY - 118;
       window.scrollTo({ top, behavior: "smooth" });
     }
   }
