@@ -92,7 +92,6 @@ export default function Header() {
           <a
             href="#home"
             aria-label="HEAT AUTO"
-            className="relative h-[90px] w-[290px] shrink-0 overflow-hidden rounded-[18px] sm:w-[310px]"
             className="relative h-[52px] w-[168px] shrink-0 overflow-hidden rounded-[18px] bg-black sm:w-[180px]"
             onClick={(event) => {
               event.preventDefault();

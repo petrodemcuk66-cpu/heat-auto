@@ -3,8 +3,6 @@ export const site = {
   legalName: "HEAT AUTO IMPORT",
 
   logo: "/images/logo/heat-auto-header-client.png",
-
-  logo: "/images/logo/heat-auto-premium.svg",
   phone: process.env.NEXT_PUBLIC_PHONE || "+38 (063) 654-06-00",
   email: process.env.NEXT_PUBLIC_EMAIL || "heatauto44@gmail.com",
   telegram: process.env.NEXT_PUBLIC_TELEGRAM || "https://t.me/HeatAuto",
