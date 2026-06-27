@@ -92,7 +92,7 @@ export default function Header() {
           <a
             href="#home"
             aria-label="HEAT AUTO"
-            className="relative h-[72px] w-[230px] shrink-0 overflow-hidden rounded-[18px] bg-black sm:w-[250px]"
+            className="relative h-[48px] w-[150px] shrink-0 overflow-hidden rounded-[12px] bg-black sm:w-[165px]"
             onClick={(event) => {
               event.preventDefault();
               handleAnchorClick("#home");
@@ -103,7 +103,7 @@ export default function Header() {
               alt={site.companyName}
               fill
               priority
-              className="object-contain p-1"
+              className="object-contain p-0"
             />
           </a>
 
