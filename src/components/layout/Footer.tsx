@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-black pb-20 sm:pb-0">
       <div className="container grid gap-10 py-12 md:grid-cols-[1.15fr_.7fr_.9fr_.9fr]">
         <div>
-          <div className="relative h-[56px] w-[190px] overflow-hidden rounded-[18px] bg-black">
+          <div className="relative h-[80px] w-[270px] overflow-hidden rounded-[18px] bg-black">
             <Image src={site.logo} alt={site.companyName} fill className="object-contain p-1" />
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-[color:var(--muted)]">
