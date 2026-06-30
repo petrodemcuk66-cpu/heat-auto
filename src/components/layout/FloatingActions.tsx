@@ -1,9 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 
-<<<<<<< HEAD
 function IconTelegram() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
@@ -36,8 +35,6 @@ function IconTikTok() {
   );
 }
 
-=======
->>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
 export default function FloatingActions() {
   const [mounted, setMounted] = useState(false);
 
@@ -45,18 +42,12 @@ export default function FloatingActions() {
     setMounted(true);
   }, []);
 
-<<<<<<< HEAD
   const base =
     "focus flex h-12 w-12 items-center justify-center rounded-full font-black text-white transition-all duration-200 hover:scale-110";
-=======
-  const baseClass =
-    "focus flex h-12 w-12 items-center justify-center rounded-full text-lg font-black transition-all duration-200 hover:scale-110";
->>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
 
   return (
     <>
       <div className="fixed bottom-24 right-4 z-[60] flex flex-col gap-3 sm:bottom-6 sm:right-6">
-<<<<<<< HEAD
         {/* Instagram */}
         <a
           href={site.instagram}
@@ -107,30 +98,12 @@ export default function FloatingActions() {
         {/* Phone */}
         <a
           href={`tel:${site.phone}`}
-          aria-label="Телефон"
+          aria-label="РўРµР»РµС„РѕРЅ"
           className={`${base} bg-[color:var(--red)] shadow-[0_16px_50px_rgba(229,9,20,.35)] ${
             mounted ? "translate-y-0 opacity-100 delay-[200ms]" : "translate-y-4 opacity-0"
           }`}
-=======
-        <a
-          href={site.telegram}
-          className={`${baseClass} bg-[#229ED9] shadow-[0_16px_50px_rgba(34,158,217,.35)] ${
-            mounted ? "translate-y-0 opacity-100 delay-100" : "translate-y-4 opacity-0"
-          }`}
-          aria-label="Telegram"
         >
-          TG
-        </a>
-
-        <a
-          href={`tel:${site.phone}`}
-          className={`${baseClass} bg-[color:var(--red)] shadow-[0_16px_50px_rgba(229,9,20,.35)] ${
-            mounted ? "translate-y-0 opacity-100 delay-200" : "translate-y-4 opacity-0"
-          }`}
-          aria-label="Телефон"
->>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
-        >
-          ☎
+          вЋ
         </a>
       </div>
 
@@ -139,7 +112,7 @@ export default function FloatingActions() {
           href="#contacts"
           className="flex min-h-[56px] items-center justify-center rounded-2xl bg-[color:var(--red)] px-5 py-3 text-base font-black text-white shadow-[0_18px_50px_rgba(229,9,20,.35)]"
         >
-          Отримати розрахунок безкоштовно
+          РћС‚СЂРёРјР°С‚Рё СЂРѕР·СЂР°С…СѓРЅРѕРє Р±РµР·РєРѕС€С‚РѕРІРЅРѕ
         </a>
       </div>
     </>

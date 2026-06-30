@@ -1,7 +1,6 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { navigation, site } from "@/data/site";
 
-<<<<<<< HEAD
 function IconTelegram() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
@@ -41,8 +40,6 @@ const socialLinks = [
   { href: site.tiktok, icon: <IconTikTok />, label: "TikTok" },
 ];
 
-=======
->>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black pb-20 sm:pb-0">
@@ -52,12 +49,12 @@ export default function Footer() {
             <Image src={site.logo} alt={site.companyName} fill className="object-contain p-0" />
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-[color:var(--muted)]">
-            Імпорт авто зі США та Європи під ключ: підбір, перевірка, доставка, розмитнення та оформлення.
+            Р†РјРїРѕСЂС‚ Р°РІС‚Рѕ Р·С– РЎРЁРђ С‚Р° Р„РІСЂРѕРїРё РїС–Рґ РєР»СЋС‡: РїС–РґР±С–СЂ, РїРµСЂРµРІС–СЂРєР°, РґРѕСЃС‚Р°РІРєР°, СЂРѕР·РјРёС‚РЅРµРЅРЅСЏ С‚Р° РѕС„РѕСЂРјР»РµРЅРЅСЏ.
           </p>
         </div>
 
         <div>
-          <h3 className="font-black">Навігація</h3>
+          <h3 className="font-black">РќР°РІС–РіР°С†С–СЏ</h3>
           <div className="mt-4 grid gap-2">
             {navigation.slice(1).map((item) => (
               <a key={item.href} href={item.href} className="text-sm text-[color:var(--muted)] hover:text-white">
@@ -68,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-black">Контакти</h3>
+          <h3 className="font-black">РљРѕРЅС‚Р°РєС‚Рё</h3>
           <div className="mt-4 grid gap-2 text-sm text-[color:var(--muted)]">
             <a href={`tel:${site.phone}`} className="hover:text-white">{site.phone}</a>
             <a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a>
@@ -78,8 +75,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-black">Соцмережі</h3>
-<<<<<<< HEAD
+          <h3 className="font-black">РЎРѕС†РјРµСЂРµР¶С–</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             {socialLinks.map((s) => (
               <a
@@ -91,17 +87,12 @@ export default function Footer() {
                 {s.icon}
               </a>
             ))}
-=======
-          <div className="mt-4 grid gap-2 text-sm text-[color:var(--muted)]">
-            <a href={site.telegram} className="hover:text-white">Telegram — швидка консультація</a>
-            <a href={site.instagram} className="hover:text-white">Instagram — авто клієнтів</a>
->>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10 py-5 text-center text-xs text-[color:var(--muted)]">
-        © 2026 {site.companyName}. Автоімпорт під ключ.
+        В© 2026 {site.companyName}. РђРІС‚РѕС–РјРїРѕСЂС‚ РїС–Рґ РєР»СЋС‡.
       </div>
     </footer>
   );
