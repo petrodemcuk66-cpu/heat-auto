@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  OFFER_SENT
+  WON
+  LOST
+}
+
+enum CallDirection {
+  INBOUND
+  OUTBOUND
+}
+
+enum CallStatus {
+  PLANNED
+  DONE
+  MISSED
+  CANCELLED
+}
+
+model Lead {
+  id           String     @id @default(cuid())
+  name         String
+  phone        String
+  email        String?
+  budget       String?
+  country      String?
+  car          String?
+  message      String?
+  source       String     @default("website")
+  status       LeadStatus @default(NEW)
+  keycrmCardId String?
+  managerNote  String?
+
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  utmTerm     String?
+  utmContent  String?
+  pageUrl     String?
+  referrer    String?
+  userAgent   String?
+
+  calls     Call[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([phone])
+  @@index([createdAt])
+}
+
+model Call {
+  id          String        @id @default(cuid())
+  leadId      String?
+  lead        Lead?         @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  phone       String
+  direction   CallDirection @default(OUTBOUND)
+  status      CallStatus    @default(PLANNED)
+  scheduledAt DateTime?
+  finishedAt  DateTime?
+  note        String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([leadId])
+  @@index([status])
+  @@index([scheduledAt])
+}
+
+model Car {
+  id          String   @id @default(cuid())
+  title       String
+  country     String
+  image       String
+  price       String
+  year        Int
+  mileage     String
+  engine      String
+  status      String
+  tag         String
+  description String
+  visible     Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([visible])
+  @@index([sortOrder])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  name      String
+  city      String
+  car       String
+  text      String
+  rating    Int      @default(5)
+  visible   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  entity    String
+  entityId  String?
+  payload   Json?
+  createdAt DateTime @default(now())
+}
