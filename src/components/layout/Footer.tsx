@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { navigation, site } from "@/data/site";
 
 function IconTelegram() {
@@ -49,12 +49,12 @@ export default function Footer() {
             <Image src={site.logo} alt={site.companyName} fill className="object-contain p-0" />
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-[color:var(--muted)]">
-            Р†РјРїРѕСЂС‚ Р°РІС‚Рѕ Р·С– РЎРЁРђ С‚Р° Р„РІСЂРѕРїРё РїС–Рґ РєР»СЋС‡: РїС–РґР±С–СЂ, РїРµСЂРµРІС–СЂРєР°, РґРѕСЃС‚Р°РІРєР°, СЂРѕР·РјРёС‚РЅРµРЅРЅСЏ С‚Р° РѕС„РѕСЂРјР»РµРЅРЅСЏ.
+            Імпорт авто зі США та Європи під ключ: підбір, перевірка, доставка, розмитнення та оформлення.
           </p>
         </div>
 
         <div>
-          <h3 className="font-black">РќР°РІС–РіР°С†С–СЏ</h3>
+          <h3 className="font-black">Навігація</h3>
           <div className="mt-4 grid gap-2">
             {navigation.slice(1).map((item) => (
               <a key={item.href} href={item.href} className="text-sm text-[color:var(--muted)] hover:text-white">
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-black">РљРѕРЅС‚Р°РєС‚Рё</h3>
+          <h3 className="font-black">Контакти</h3>
           <div className="mt-4 grid gap-2 text-sm text-[color:var(--muted)]">
             <a href={`tel:${site.phone}`} className="hover:text-white">{site.phone}</a>
             <a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a>
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="font-black">РЎРѕС†РјРµСЂРµР¶С–</h3>
+          <h3 className="font-black">Соцмережі</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             {socialLinks.map((s) => (
               <a
@@ -92,7 +92,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-5 text-center text-xs text-[color:var(--muted)]">
-        В© 2026 {site.companyName}. РђРІС‚РѕС–РјРїРѕСЂС‚ РїС–Рґ РєР»СЋС‡.
+        © 2026 {site.companyName}. Автоімпорт під ключ.
       </div>
     </footer>
   );
