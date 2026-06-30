@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import SectionTitle from "@/components/ui/SectionTitle";
 import RouteMap from "@/components/ui/RouteMap";
+=======
+import Image from "next/image";
+import SectionTitle from "@/components/ui/SectionTitle";
+>>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
 
 const steps = [
   ["01", "Консультація", "Уточнюємо бюджет, модель, країну, терміни та очікування від автомобіля."],
@@ -21,7 +26,13 @@ export default function Process() {
               title="Зрозумілий маршрут від заявки до ключів"
               text="Кожен етап має свою задачу, відповідальність і результат. Клієнт розуміє, що відбувається з автомобілем і коли очікувати наступний крок."
             />
+<<<<<<< HEAD
             <RouteMap />
+=======
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] border border-white/10">
+              <Image src="/images/backgrounds/route-map.jpg" alt="Логістика авто" fill className="object-cover" />
+            </div>
+>>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
           </div>
 
           <div data-reveal className="grid gap-4 sm:grid-cols-2">

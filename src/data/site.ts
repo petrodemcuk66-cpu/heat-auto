@@ -7,8 +7,11 @@ export const site = {
   email: process.env.NEXT_PUBLIC_EMAIL || "heatauto44@gmail.com",
   telegram: process.env.NEXT_PUBLIC_TELEGRAM || "https://t.me/HeatAuto",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "https://instagram.com/heatauto",
+<<<<<<< HEAD
   facebook: process.env.NEXT_PUBLIC_FACEBOOK || "#",
   tiktok: process.env.NEXT_PUBLIC_TIKTOK || "#",
+=======
+>>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
   address: "Микулинецька 3А",
   workTime: "Пн–Сб: 09:00–19:00",
   title: "Ваше авто з США або Європи — без переплат і нервів",

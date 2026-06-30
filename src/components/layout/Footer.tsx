@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { navigation, site } from "@/data/site";
 
+<<<<<<< HEAD
 function IconTelegram() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
@@ -40,6 +41,8 @@ const socialLinks = [
   { href: site.tiktok, icon: <IconTikTok />, label: "TikTok" },
 ];
 
+=======
+>>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black pb-20 sm:pb-0">
@@ -76,6 +79,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-black">Соцмережі</h3>
+<<<<<<< HEAD
           <div className="mt-4 flex flex-wrap gap-3">
             {socialLinks.map((s) => (
               <a
@@ -87,6 +91,11 @@ export default function Footer() {
                 {s.icon}
               </a>
             ))}
+=======
+          <div className="mt-4 grid gap-2 text-sm text-[color:var(--muted)]">
+            <a href={site.telegram} className="hover:text-white">Telegram — швидка консультація</a>
+            <a href={site.instagram} className="hover:text-white">Instagram — авто клієнтів</a>
+>>>>>>> 70792aded3fa030693e10a1467fd5df52f0d9740
           </div>
         </div>
       </div>
